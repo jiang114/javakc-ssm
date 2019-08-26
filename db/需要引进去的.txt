@@ -1,0 +1,25 @@
+insert into DATA_DICTIONARY (data_id, data_name, data_type, data_code, data_val, data_common)
+values ('1f2cf13afe884f869fe844f63d9d49ff', '申请状态', 'apply_state', '0', '待审核', '0：待审核 1：待验收2：已验收');
+insert into DATA_DICTIONARY (data_id, data_name, data_type, data_code, data_val, data_common)
+values ('845c65534fb04108bb42da932971c941', '申请状态', 'apply_state', '1', '待验收', '0：待审核 1：待验收2：已验收');
+insert into DATA_DICTIONARY (data_id, data_name, data_type, data_code, data_val, data_common)
+values ('79ca6f301c914beebed93628922b2728', '申请状态', 'apply_state', '2', '已验收', '0：待审核1：待验收 2：已验收');
+insert into DATA_DICTIONARY (data_id, data_name, data_type, data_code, data_val, data_common)
+values ('d42601e69dcd498f8b47127318975973', '订单状态', 'order_state', '0', '待生成订单', '0：待生成订单1：订单已发出2：已收货 3：已收货');
+insert into DATA_DICTIONARY (data_id, data_name, data_type, data_code, data_val, data_common)
+values ('be29930e068248c282956b302d39b6ab', '订单状态', 'order_state', '1', '订单已发出', '0：待生成订单1：订单已发出2：已收货 3：已收货');
+insert into DATA_DICTIONARY (data_id, data_name, data_type, data_code, data_val, data_common)
+values ('abc2db153c4f47a8a5802f3ce0cb0311', '订单状态', 'order_state', '2', '已发货', '0：待生成订单1：订单已发出2：已收货 3：已收货');
+insert into DATA_DICTIONARY (data_id, data_name, data_type, data_code, data_val, data_common)
+values ('ffbd1cb72adc4868865690e56fb98ded', '订单状态', 'order_state', '3', '已收货', '0：待生成订单1：订单已发出2：已收货 3：已收货');
+
+insert into DATA_MENU (menu_id, menu_name, menu_level, menu_uri, menu_permission, menu_weight, menu_state, menu_pid)
+values ('413f449f0bb14e3d9a3ff54c2b1fcd14', '铅封管理模块', 1, 'lead/query.do', 'void', 500, 0, '0');
+insert into DATA_MENU (menu_id, menu_name, menu_level, menu_uri, menu_permission, menu_weight, menu_state, menu_pid)
+values ('a40c40694d774da4ad6f2769683e0968', '采购管理', 2, 'apply/query.do', 'apply', 510, 0, '413f449f0bb14e3d9a3ff54c2b1fcd14');
+insert into DATA_MENU (menu_id, menu_name, menu_level, menu_uri, menu_permission, menu_weight, menu_state, menu_pid)
+values ('c3378906a6414595984668c11eadfe00', '订单管理', 2, 'order/query.do', 'order', 520, 0, '413f449f0bb14e3d9a3ff54c2b1fcd14');
+insert into DATA_MENU (menu_id, menu_name, menu_level, menu_uri, menu_permission, menu_weight, menu_state, menu_pid)
+values ('62fed38a453a4a72902bf44ff5bdd3e4', '收货管理', 2, 'indent/query.do', 'indent', 530, 0, '413f449f0bb14e3d9a3ff54c2b1fcd14');
+insert into DATA_MENU (menu_id, menu_name, menu_level, menu_uri, menu_permission, menu_weight, menu_state, menu_pid)
+values ('152cb46059d54051ad098760eb77e0f8', '发放管理', 2, 'grant/query.do', 'grant', 540, 0, '413f449f0bb14e3d9a3ff54c2b1fcd14');

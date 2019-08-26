@@ -21,7 +21,7 @@
     <!-- druid数据源 -->
     <druid.version>1.0.11</druid.version>
     <!-- 驱动包版本 -->
-    <oracle.version>11.1.0</oracle.version>
+    <oracle.version>11.2.0</oracle.version>
     <mysql.version>5.1.30</mysql.version>
     <!-- 日志文件管理包版本 -->
     <slf4j.version>1.7.7</slf4j.version>

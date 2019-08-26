@@ -34,7 +34,7 @@ drop table TBL_STOCK_SEAL cascade constraints;
 /*==============================================================*/
 /* Table: TBL_APPLY_SEAL                                        */
 /*==============================================================*/
-create table TBL_APPLY_SEAL 
+create table TBL_APPLY_SEAL
 (
    apply_id             VARCHAR2(32 CHAR)    not null,
    TBL_order_id         VARCHAR2(32 CHAR),
@@ -56,57 +56,57 @@ create table TBL_APPLY_SEAL
 );
 
 comment on table TBL_APPLY_SEAL is
-'Ç¦·â²É¹º±í';
+'é“…å°é‡‡è´­è¡¨';
 
 comment on column TBL_APPLY_SEAL.apply_id is
-'Ö÷¼üID';
+'ä¸»é”®ID';
 
 comment on column TBL_APPLY_SEAL.TBL_order_id is
-'¶©µ¥±íÍâ¼ü';
+'è®¢å•è¡¨å¤–é”®';
 
 comment on column TBL_APPLY_SEAL.apply_number is
-'ÉêÇëºÅ';
+'ç”³è¯·å·';
 
 comment on column TBL_APPLY_SEAL.apply_name is
-'ÉêÇëÈË';
+'ç”³è¯·äºº';
 
 comment on column TBL_APPLY_SEAL.apply_date is
-'ÉêÇëÈÕÆÚ';
+'ç”³è¯·æ—¥æœŸ';
 
 comment on column TBL_APPLY_SEAL.apply_count is
-'ÉêÇëÊıÁ¿';
+'ç”³è¯·æ•°é‡';
 
 comment on column TBL_APPLY_SEAL.apply_way is
-'Ç¦·â·½Ê½';
+'é“…å°æ–¹å¼';
 
 comment on column TBL_APPLY_SEAL.apply_type is
-'Ç¦·âÀàĞÍ';
+'é“…å°ç±»å‹';
 
 comment on column TBL_APPLY_SEAL.apply_state is
-'ÉêÇë×´Ì¬';
+'ç”³è¯·çŠ¶æ€';
 
 comment on column TBL_APPLY_SEAL.apply_phone is
-'ÉêÇëÈËÊÖ»ú';
+'ç”³è¯·äººæ‰‹æœº';
 
 comment on column TBL_APPLY_SEAL.apply_inside is
-'ÄÚ²¿/Íâ²¿';
+'å†…éƒ¨/å¤–éƒ¨';
 
 comment on column TBL_APPLY_SEAL."apply_ coding" is
-'ÓÊÕş±àÂë';
+'é‚®æ”¿ç¼–ç ';
 
 comment on column TBL_APPLY_SEAL.apply_site is
-'ÓÊ¼ÄµØÖ÷';
+'é‚®å¯„åœ°ä¸»';
 
 comment on column TBL_APPLY_SEAL.apply_unit is
-'ÉêÇëµ¥Î»';
+'ç”³è¯·å•ä½';
 
 comment on column TBL_APPLY_SEAL.apply_state2 is
-'ÉêÇëËßÇó';
+'ç”³è¯·è¯‰æ±‚';
 
 /*==============================================================*/
 /* Table: TBL_INDENT_SEAL                                       */
 /*==============================================================*/
-create table TBL_INDENT_SEAL 
+create table TBL_INDENT_SEAL
 (
    indent_id            VARCHAR2(32 CHAR)    not null,
    TBL_order_id         VARCHAR2(32 CHAR),
@@ -119,33 +119,33 @@ create table TBL_INDENT_SEAL
 );
 
 comment on table TBL_INDENT_SEAL is
-'Ç¦·âÊÕ»õ±í';
+'é“…å°æ”¶è´§è¡¨';
 
 comment on column TBL_INDENT_SEAL.indent_id is
-'Ö÷¼üID';
+'ä¸»é”®ID';
 
 comment on column TBL_INDENT_SEAL.TBL_order_id is
-'¶©µ¥±íÍâ¼ü';
+'è®¢å•è¡¨å¤–é”®';
 
 comment on column TBL_INDENT_SEAL.indent_count is
-'¶©µ¥ÊıÁ¿';
+'è®¢å•æ•°é‡';
 
 comment on column TBL_INDENT_SEAL.indent_start_number is
-'ÆğÊ¼±àºÅ';
+'èµ·å§‹ç¼–å·';
 
 comment on column TBL_INDENT_SEAL.indent_end_number is
-'ÖÕÖ¹±àºÅ';
+'ç»ˆæ­¢ç¼–å·';
 
 comment on column TBL_INDENT_SEAL.indent_stale_dated is
-'ÊÇ·ñ¹ıÆÚ';
+'æ˜¯å¦è¿‡æœŸ';
 
 comment on column TBL_INDENT_SEAL.indent_date is
-'ÊÕ»õÈÕÆÚ';
+'æ”¶è´§æ—¥æœŸ';
 
 /*==============================================================*/
 /* Table: TBL_SEALNUM                                           */
 /*==============================================================*/
-create table TBL_SEALNUM 
+create table TBL_SEALNUM
 (
    roughly_id           VARCHAR2(32 CHAR)    not null,
    TBL_indent_id        VARCHAR2(32 CHAR),
@@ -155,24 +155,24 @@ create table TBL_SEALNUM
 );
 
 comment on table TBL_SEALNUM is
-'ºÅ¶Î±í';
+'å·æ®µè¡¨';
 
 comment on column TBL_SEALNUM.roughly_id is
-'Ö÷¼üID';
+'ä¸»é”®ID';
 
 comment on column TBL_SEALNUM.TBL_indent_id is
-'ÊÕ»õ±íÍâ¼ü';
+'æ”¶è´§è¡¨å¤–é”®';
 
 comment on column TBL_SEALNUM.TBL_grant_id is
-'·¢·Å±íÍâ¼ü';
+'å‘æ”¾è¡¨å¤–é”®';
 
 comment on column TBL_SEALNUM.roughly_number is
-'ºÅ¶Î±àºÅ';
+'å·æ®µç¼–å·';
 
 /*==============================================================*/
 /* Table: TBL_SEAL_ORDER                                        */
 /*==============================================================*/
-create table TBL_SEAL_ORDER 
+create table TBL_SEAL_ORDER
 (
    order_id             VARCHAR2(32 CHAR)    not null,
    order_number         VARCHAR2(32),
@@ -185,33 +185,33 @@ create table TBL_SEAL_ORDER
 );
 
 comment on table TBL_SEAL_ORDER is
-'Ç¦·â¶©µ¥±í';
+'é“…å°è®¢å•è¡¨';
 
 comment on column TBL_SEAL_ORDER.order_id is
-'Ö÷¼üID';
+'ä¸»é”®ID';
 
 comment on column TBL_SEAL_ORDER.order_number is
-'¶©µ¥Åú´ÎºÅ';
+'è®¢å•æ‰¹æ¬¡å·';
 
 comment on column TBL_SEAL_ORDER.order_name is
-'Éú²ú³§¼ÒÃû³Æ';
+'ç”Ÿäº§å‚å®¶åç§°';
 
 comment on column TBL_SEAL_ORDER.order_describe is
-'Éú²ú³§¼ÒÃèÊö';
+'ç”Ÿäº§å‚å®¶æè¿°';
 
 comment on column TBL_SEAL_ORDER.order_date is
-'¶©µ¥ÈÕÆÚ';
+'è®¢å•æ—¥æœŸ';
 
 comment on column TBL_SEAL_ORDER.order_count is
-'¶©µ¥ÊıÁ¿';
+'è®¢å•æ•°é‡';
 
 comment on column TBL_SEAL_ORDER.order_state is
-'ÉêÇë×´Ì¬';
+'ç”³è¯·çŠ¶æ€';
 
 /*==============================================================*/
 /* Table: TBL_SEAL_RELEASE                                      */
 /*==============================================================*/
-create table TBL_SEAL_RELEASE 
+create table TBL_SEAL_RELEASE
 (
    grant_id             VARCHAR2(32 CHAR)    not null,
    grant_number         VARCHAR2(20),
@@ -220,21 +220,21 @@ create table TBL_SEAL_RELEASE
 );
 
 comment on table TBL_SEAL_RELEASE is
-'·¢·Å±í';
+'å‘æ”¾è¡¨';
 
 comment on column TBL_SEAL_RELEASE.grant_id is
-'Ö÷¼üID';
+'ä¸»é”®ID';
 
 comment on column TBL_SEAL_RELEASE.grant_number is
-'ºÅ¶Î±àºÅ';
+'å·æ®µç¼–å·';
 
 comment on column TBL_SEAL_RELEASE.grant_date is
-'·¢·ÅÈÕÆÚ';
+'å‘æ”¾æ—¥æœŸ';
 
 /*==============================================================*/
 /* Table: TBL_STOCK_SEAL                                        */
 /*==============================================================*/
-create table TBL_STOCK_SEAL 
+create table TBL_STOCK_SEAL
 (
    stock_id             VARCHAR2(32 CHAR)    not null,
    TBL_roughly_id       VARCHAR2(32 CHAR),
@@ -251,40 +251,40 @@ create table TBL_STOCK_SEAL
 );
 
 comment on table TBL_STOCK_SEAL is
-'¿â´æ±í';
+'åº“å­˜è¡¨';
 
 comment on column TBL_STOCK_SEAL.stock_id is
-'Ö÷¼üID';
+'ä¸»é”®ID';
 
 comment on column TBL_STOCK_SEAL.TBL_roughly_id is
-'ºÅ¶Î±íID';
+'å·æ®µè¡¨ID';
 
 comment on column TBL_STOCK_SEAL.stock_number is
-'¿â´æ±àºÅ';
+'åº“å­˜ç¼–å·';
 
 comment on column TBL_STOCK_SEAL.stock_state is
-'Ê¹ÓÃ×´Ì¬';
+'ä½¿ç”¨çŠ¶æ€';
 
 comment on column TBL_STOCK_SEAL.motorcade_id is
-'³µ¶ÓID';
+'è½¦é˜ŸID';
 
 comment on column TBL_STOCK_SEAL.delivery_id is
-'ÅäËÍID';
+'é…é€ID';
 
 comment on column TBL_STOCK_SEAL.stock_site is
-'ÊµÊ©Ç¦·âÎ»ÖÃ';
+'å®æ–½é“…å°ä½ç½®';
 
 comment on column TBL_STOCK_SEAL.stock_unit is
-'ÊµÊ©Ç¦·âµ¥Î»';
+'å®æ–½é“…å°å•ä½';
 
 comment on column TBL_STOCK_SEAL.stock_seal_unit is
-'²ğ·âµ¥Î»';
+'æ‹†å°å•ä½';
 
 comment on column TBL_STOCK_SEAL.stock_state2 is
-'×´Ì¬';
+'çŠ¶æ€';
 
 comment on column TBL_STOCK_SEAL.stock_remark is
-'±¸×¢';
+'å¤‡æ³¨';
 
 alter table TBL_APPLY_SEAL
    add constraint FK_TBL_APPL_REFERENCE_TBL_SEAL foreign key (TBL_order_id)
