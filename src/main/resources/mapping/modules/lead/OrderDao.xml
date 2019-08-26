@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhg.javakc.modules.lead.order.dao.OrderDao">
+
+
+<resultMap id="orderentityMap" type="orderentity">
+<id property="order_id" column="order_id"/>
+	<result column="order_name" property="order_name"/>
+	<result column="order_describe" property="order_describe"/>
+	<result column="order_number" property="order_number"/>
+	<result column="order_date" property="order_date"/>
+	<result column="order_count" property="order_count"/>
+	<result column="order_state" property="order_state"/>
+	<collection property="applyEntities" ofType="applyentity">
+        <id property="apply_id" column="apply_id"/>
+		<result column="createDate" property="createDate"/>
+		<result column="TBL_order_id" property="TBL_order_id"/>
+		<result column="apply_number" property="apply_number"/>
+		<result column="apply_name" property="apply_name"/>
+		<result column="apply_unit" property="apply_unit"/>
+		<result column="apply_date" property="apply_date"/>
+		<result column="apply_count" property="apply_count"/>
+		<result column="apply_way" property="apply_way"/>
+		<result column="apply_type" property="apply_type"/>
+		<result column="apply_state" property="apply_state"/>
+		<result column="apply_phone" property="apply_phone"/>
+		<result column="apply_inside" property="apply_inside"/>
+		<result column="apply_coding" property="apply_coding"/>
+		<result column="apply_site" property="apply_site"/>
+	</collection>
+</resultMap>
+
+
+
+
+	<select id="findList" resultType="orderentity">
+		SELECT * FROM TBL_SEAL_ORDER where 1=1
+<!--			<where>-->
+<!--				<if test="testName != null and testName != ''">-->
+<!--					AND TEST_NAME LIKE '%'||#{testName}||'%'-->
+<!--				</if>-->
+<!--			</where>-->
+
+	</select>
+	<select id="findList2" resultType="orderentity">
+		SELECT * FROM TBL_SEAL_ORDER where order_state=1
+	</select>
+
+	<insert id="insert">
+		INSERT INTO TBL_SEAL_ORDER(order_id, order_number, order_name, order_count,order_state)
+			VALUES(#{order_id},#{order_number},#{order_name},#{order_count},#{order_state})
+	</insert>
+<!--	-->
+	<select id="get" resultMap="orderentityMap">
+		SELECT * FROM TBL_APPLY_SEAL a , TBL_SEAL_ORDER o WHERE o.order_id = #{order_id} and a.TBL_order_id =#{order_id}
+	</select>
+	<update id="update">
+		UPDATE TBL_SEAL_ORDER SET order_name = #{order_name}, order_describe = #{order_describe}
+			 WHERE order_id = #{order_id}
+	</update>
+
+	<update id="updateState">
+		UPDATE TBL_SEAL_ORDER SET order_state= #{order_state}
+			 WHERE order_id = #{order_id}
+	</update>
+<!--	<update id="updateById">-->
+
+<!--	<![CDATA[UPDATE TBL_APPLY_SEAL SET TBL_order_id = #{order_id},apply_state = ${1}  WHERE apply_id in ]]>-->
+<!--		<foreach collection="applyEntities" item="list" index="i" open="(" close=")" separator=",">-->
+<!--			#{list.apply_id}-->
+<!--		</foreach>-->
+
+<!--	</update>-->
+
+	<delete id="delete" parameterType="java.lang.String">
+	    <![CDATA[
+	       DELETE FROM TBL_SEAL_ORDER WHERE order_id IN
+	    ]]>
+	    <foreach collection="array" item="id" open="(" separator="," close=")">
+	    	#{id}
+	    </foreach>
+	</delete>
+	
+</mapper>

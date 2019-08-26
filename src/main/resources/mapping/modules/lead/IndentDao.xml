@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhg.javakc.modules.lead.indent.dao.IndentDao">
+
+
+<!--	<insert id="insert">-->
+<!--		INSERT INTO TBL_SEAL_ORDER(order_id, order_number, order_name, order_count,order_state)-->
+<!--			VALUES(#{order_id},#{order_number},#{order_name},#{order_count},#{order_state})-->
+<!--	</insert>-->
+<!--&lt;!&ndash;	&ndash;&gt;-->
+<!--	<select id="get" resultMap="orderentityMap">-->
+<!--		SELECT * FROM TBL_APPLY_SEAL a , TBL_SEAL_ORDER o WHERE o.order_id = #{order_id} and a.TBL_order_id =#{order_id}-->
+<!--	</select>-->
+<!--	<update id="update">-->
+<!--		UPDATE TBL_SEAL_ORDER SET order_name = #{order_name}, order_describe = #{order_describe}-->
+<!--			 WHERE order_id = #{order_id}-->
+<!--	</update>-->
+
+<!--	<update id="updateState">-->
+<!--		UPDATE TBL_SEAL_ORDER SET order_state= #{order_state}-->
+<!--			 WHERE order_id = #{order_id}-->
+<!--	</update>-->
+<!--&lt;!&ndash;	<update id="updateById">&ndash;&gt;-->
+
+<!--&lt;!&ndash;	<![CDATA[UPDATE TBL_APPLY_SEAL SET TBL_order_id = #{order_id},apply_state = ${1}  WHERE apply_id in ]]>&ndash;&gt;-->
+<!--&lt;!&ndash;		<foreach collection="applyEntities" item="list" index="i" open="(" close=")" separator=",">&ndash;&gt;-->
+<!--&lt;!&ndash;			#{list.apply_id}&ndash;&gt;-->
+<!--&lt;!&ndash;		</foreach>&ndash;&gt;-->
+
+<!--&lt;!&ndash;	</update>&ndash;&gt;-->
+
+<!--	<delete id="delete" parameterType="java.lang.String">-->
+<!--	    <![CDATA[-->
+<!--	       DELETE FROM TBL_SEAL_ORDER WHERE order_id IN-->
+<!--	    ]]>-->
+<!--	    <foreach collection="array" item="id" open="(" separator="," close=")">-->
+<!--	    	#{id}-->
+<!--	    </foreach>-->
+<!--	</delete>-->
+<!--	-->
+</mapper>
