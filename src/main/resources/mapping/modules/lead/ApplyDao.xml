@@ -9,7 +9,7 @@
 <!--					AND TEST_NAME LIKE '%'||#{testName}||'%'-->
 <!--				</if>-->
 <!--			</where>-->
-
+		order by apply_state asc
 	</select>
 	
 	<insert id="insert">
