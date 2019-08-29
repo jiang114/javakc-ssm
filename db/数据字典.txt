@@ -1,0 +1,11 @@
+insert into DATA_DICTIONARY (data_id, data_name, data_type, data_code, data_val, data_common)
+values ('602f64d37bb54d23a4db89aaba5620df', '培训结果', 'train_result', '1', '完成', '1：完成 2：未完成');
+insert into DATA_DICTIONARY (data_id, data_name, data_type, data_code, data_val, data_common)
+values ('6844ea197d624c74adc38f119300ee46', '培训结果', 'train_result', '2', '未完成', '1：完成 2：未完成');
+insert into DATA_DICTIONARY (data_id, data_name, data_type, data_code, data_val, data_common)
+values ('22c298d516784b32bd531604025c85f9', '技术等级', 'technical_level', '1', 'A本', '1：A本 2：B本 3：C本');
+insert into DATA_DICTIONARY (data_id, data_name, data_type, data_code, data_val, data_common)
+values ('0389d834913e42c4bb856ccde5dab698', '技术等级', 'technical_level', '2', 'B本', '1：A本 2：B本 3：C本');
+insert into DATA_DICTIONARY (data_id, data_name, data_type, data_code, data_val, data_common)
+values ('3030c71277b44b1d8ef6a187b55362a6', '技术等级', 'technical_level', '3', 'C本', '1：A本 2：B本 3：C本');
+commit;
