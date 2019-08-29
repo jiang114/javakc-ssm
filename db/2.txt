@@ -1,0 +1,9 @@
+insert into DATA_MENU (menu_id, menu_name, menu_level, menu_uri, menu_permission, menu_weight, menu_state, menu_pid)
+values ('bb7f97d992e14e0f8995eb4ac03f51e8', '驾驶员管理', 1, 'driver/query.do', 'void', 600, 0, '0');
+insert into DATA_MENU (menu_id, menu_name, menu_level, menu_uri, menu_permission, menu_weight, menu_state, menu_pid)
+values ('5633abd5b044435fa9f34ab340b45881', '基本信息管理', 2, 'basic/query.do', 'basic', 610, 0, 'bb7f97d992e14e0f8995eb4ac03f51e8');
+insert into DATA_MENU (menu_id, menu_name, menu_level, menu_uri, menu_permission, menu_weight, menu_state, menu_pid)
+values ('245440f062e243baa0d9b180596b539d', '培训信息管理', 2, 'train/query1.do', 'train', 620, 0, 'bb7f97d992e14e0f8995eb4ac03f51e8');
+insert into DATA_MENU (menu_id, menu_name, menu_level, menu_uri, menu_permission, menu_weight, menu_state, menu_pid)
+values ('b027f19f91194d6da74e45e054308043', '稽查信息管理', 2, 'audit/query1.do', 'audit', 630, 0, 'bb7f97d992e14e0f8995eb4ac03f51e8');
+commit;

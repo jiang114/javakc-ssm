@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhg.javakc.modules.driver.train.dao.TrainDao">
+
+
+    <resultMap id="trainBasicMap" type="com.zhg.javakc.modules.driver.train.entity.TrainEntity" >
+        <id property="train_id" column="train_id" />
+        <result property="driver_id" column="driver_id"/>
+        <result property="train_org_name" column="train_org_name"/>
+        <result property="train_content_name" column="train_content_name"/>
+        <result property="train_address" column="train_address"/>
+        <result property="train_start_time" column="train_start_time"/>
+        <result property="train_end_time" column="train_end_time"/>
+        <result property="train_type" column="train_type"/>
+        <result property="train_teacher" column="train_teacher"/>
+        <result property="train_content" column="train_content"/>
+        <result property="train_result" column="train_result"/>
+        <association property="basicEntity" javaType="com.zhg.javakc.modules.driver.basic.entity.BasicEntity" >
+            <result property="driver_id" column="driver_id"/>
+            <result property="driver_name" column="driver_name"/>
+            <result property="driver_card" column="driver_card"/>
+            <result property="driver_sex" column="driver_sex"/>
+<!--            <result property="driver_type" column="driver_type"/>-->
+<!--            <result property="driver_license" column="driver_license"/>-->
+        </association>
+    </resultMap>
+
+        <select id="query1" resultMap="trainBasicMap">
+            SELECT t.train_id,t.driver_id,t.train_org_name,t.train_content_name,
+            t.train_address,t.train_start_time,t.train_end_time,t.train_type,
+             t.train_teacher,t.train_content,t.train_result,d.driver_name,d.driver_card,d.driver_sex from sy_driver d,sy_train t where d.driver_id=t.driver_id
+        </select>
+
+        <select id="query2" resultMap="trainBasicMap">
+            SELECT d.driver_name,d.driver_id from sy_driver d where 1=1
+        </select>
+
+        <select id="query3" resultMap="trainBasicMap">
+            SELECT d.driver_id from sy_driver d where d.driver_name like #{driver_name}
+        </select>
+
+    <insert id="insert">
+        insert into sy_train(train_id,driver_id,train_org_name,train_content_name,train_address,train_start_time,train_end_time,train_type,train_teacher,train_content,train_result)
+        values (#{train_id},#{driver_id},#{train_org_name},#{train_content_name},#{train_address},#{train_start_time},#{train_end_time},#{train_type},#{train_teacher},#{train_content},#{train_result})
+    </insert>
+
+    <select id="get" resultMap="trainBasicMap">
+         SELECT t.train_id,t.driver_id,t.train_org_name,t.train_content_name,
+            t.train_address,t.train_start_time,t.train_end_time,t.train_type,
+             t.train_teacher,t.train_content,t.train_result,d.driver_name,d.driver_card,d.driver_sex from sy_driver d,sy_train t where t.train_id=#{train_id} and d.driver_id=t.driver_id
+    </select>
+
+    <update id="update">
+        update sy_train set driver_id=#{driver_id},train_org_name=#{train_org_name},train_content_name=#{train_content_name},train_address=#{train_address},
+        train_start_time=#{train_start_time},train_end_time=#{train_end_time},train_type=#{train_type},train_teacher=#{train_teacher},train_content=#{train_content},
+        train_result=#{train_result} where train_id=#{train_id}
+    </update>
+
+    <delete id="delete">
+        <![CDATA[
+	       DELETE FROM sy_train WHERE train_id IN
+	    ]]>
+        <foreach collection="array" item="id" open="(" separator="," close=")">
+	    #{id}
+        </foreach>
+    </delete>
+
+
+</mapper>

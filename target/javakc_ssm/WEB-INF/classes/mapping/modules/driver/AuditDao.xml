@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhg.javakc.modules.driver.audit.dao.AuditDao">
+
+
+    <resultMap id="auditBasicMap" type="com.zhg.javakc.modules.driver.audit.entity.AuditEntity" >
+        <id property="inspection_id" column="inspection_id" />
+        <result property="driver_id" column="driver_id"/>
+        <result property="inspection_org_name" column="inspection_org_name"/>
+        <result property="inspection_time" column="inspection_time"/>
+        <result property="inspection_money" column="inspection_money"/>
+        <result property="inspection_adress" column="inspection_adress"/>
+        <result property="inspection_contnet" column="inspection_contnet"/>
+        <result property="inspection_rectify" column="inspection_rectify"/>
+        <result property="inspection_points" column="inspection_points"/>
+        <result property="inspection_result" column="inspection_result"/>
+        <association property="basicEntity" javaType="com.zhg.javakc.modules.driver.basic.entity.BasicEntity" >
+            <result property="driver_id" column="driver_id"/>
+            <result property="driver_name" column="driver_name"/>
+<!--            <result property="driver_card" column="driver_card"/>-->
+<!--            <result property="driver_sex" column="driver_sex"/>-->
+<!--            <result property="driver_type" column="driver_type"/>-->
+<!--            <result property="driver_license" column="driver_license"/>-->
+        </association>
+    </resultMap>
+
+    <select id="query1" resultMap="auditBasicMap">
+        select i.inspection_id,i.driver_id,i.inspection_org_name,i.inspection_time,
+         i.inspection_money,i.inspection_adress,i.inspection_contnet,i.inspection_rectify,
+         i.inspection_points,i.inspection_result,d.driver_name from sy_inspection i,sy_driver d where d.driver_id=i.driver_id
+    </select>
+
+    <select id="query2" resultMap="auditBasicMap">
+            SELECT d.driver_name,d.driver_id from sy_driver d where 1=1
+    </select>
+
+    <select id="query3" resultMap="auditBasicMap">
+            SELECT d.driver_id from sy_driver d where d.driver_name like #{driver_name}
+    </select>
+
+    <insert id="insert">
+        insert into sy_inspection(inspection_id,driver_id,inspection_org_name,inspection_time,inspection_money,inspection_adress,inspection_contnet,inspection_rectify,inspection_points,inspection_result)
+        values (#{inspection_id},#{driver_id},#{inspection_org_name},#{inspection_time},#{inspection_money},#{inspection_adress},#{inspection_contnet},#{inspection_rectify},#{inspection_points},#{inspection_result})
+    </insert>
+
+    <select id="get" resultMap="auditBasicMap">
+         select i.inspection_id,i.driver_id,i.inspection_org_name,i.inspection_time,
+         i.inspection_money,i.inspection_adress,i.inspection_contnet,i.inspection_rectify,
+         i.inspection_points,i.inspection_result,d.driver_name from sy_inspection i,sy_driver d where inspection_id=#{inspection_id} and d.driver_id=i.driver_id
+    </select>
+
+    <update id="update">
+        update sy_inspection set driver_id=#{driver_id},inspection_org_name=#{inspection_org_name},inspection_time=#{inspection_time},
+        inspection_money=#{inspection_money},inspection_adress=#{inspection_adress},inspection_contnet=#{inspection_contnet},
+        inspection_rectify=#{inspection_rectify},inspection_points=#{inspection_points},inspection_result=#{inspection_result}
+        where inspection_id=#{inspection_id}
+    </update>
+
+    <delete id="delete">
+        <![CDATA[
+	       DELETE FROM sy_inspection WHERE inspection_id IN
+	    ]]>
+        <foreach collection="array" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

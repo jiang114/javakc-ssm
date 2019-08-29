@@ -30,6 +30,7 @@
 		<typeAlias type="com.zhg.javakc.modules.org.tree.entity.OrgtreeEntity" alias="orgtree" />
 		<typeAlias type="com.zhg.javakc.modules.lead.order.entity.OrderEntity" alias="orderentity" />
 		<typeAlias type="com.zhg.javakc.modules.lead.apply.entity.ApplyEntity" alias="applyentity" />
+		<typeAlias type="com.zhg.javakc.modules.driver.basic.entity.BasicEntity" alias="basicEntity" />
 	</typeAliases>
 	
 </configuration>
