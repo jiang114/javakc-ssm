@@ -28,7 +28,7 @@
                         </div>           <div class="form-group">
                         <label class="col-sm-2 control-label" >性别</label>
                         <div class="col-sm-4">
-                            <zhg:select codeTp="sex" cls="form-control" name="driver_sex" value="${basicEntity.driver_sex}" ></zhg:select>
+                            <zhg:select codeTp="sex" cls="form-control" name="driver_sex" value="${basicEntity.driver_sex}" />
                         </div>
                         <label class="col-sm-2 control-label" >在职状态</label>
                         <div class="col-sm-4">
@@ -53,7 +53,7 @@
                             </div>
                             <label class="col-sm-2 control-label" >技术等级</label>
                             <div class="col-sm-4">
-                                <zhg:select codeTp="technical_level" cls="form-control" name="driver_industrial" value="${basicEntity.driver_industrial}"></zhg:select>
+                                <zhg:select codeTp="technical_level" cls="form-control" name="driver_industrial" value="${basicEntity.driver_industrial}"/>
                             </div>
                         </div>
                         <div class="form-group">

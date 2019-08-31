@@ -26,7 +26,6 @@ public class TrainController {
     public ModelAndView queryAll(TrainEntity trainEntity, HttpServletRequest request, HttpServletResponse response) {
         ModelAndView modelAndView =new ModelAndView("train/list");
         Page<TrainEntity> page = trainService.queryAll(trainEntity, new Page<>(request, response));
-//        Page<TrainEntity> page = trainService.query1();
         modelAndView.addObject("page",page);
         return modelAndView;
     }
@@ -39,11 +38,7 @@ public class TrainController {
     }
     @RequestMapping("create")
     public String create(TrainEntity trainEntity){
-        TrainEntity ids=trainService.query3(trainEntity.getBasicEntity());
         trainEntity.setTrain_id(CommonUtil.uuid());
-        if (ids!=null){
-            trainEntity.setDriver_id(ids.getBasicEntity().getDriver_id());
-        }
         trainService.save(trainEntity);
         return "redirect:query1.do";
     }
@@ -57,14 +52,6 @@ public class TrainController {
     }
     @RequestMapping("update")
     public String update(TrainEntity trainEntity){
-        TrainEntity ids=trainService.query3(trainEntity.getBasicEntity());
-        if (ids!=null){
-            if (!ids.getBasicEntity().getDriver_id().equals(trainEntity.getBasicEntity().getDriver_id())){
-                String id=trainEntity.getBasicEntity().getDriver_id();
-                id=ids.getBasicEntity().getDriver_id();
-                trainEntity.setDriver_id(id);
-            }
-        }
         trainService.update(trainEntity);
         return "redirect:query1.do";
     }

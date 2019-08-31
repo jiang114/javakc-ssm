@@ -26,7 +26,4 @@ public class AuditService extends BaseService<AuditDao, AuditEntity> {
         return auditDao.query2();
     }
 
-    public AuditEntity query3(BasicEntity basicEntity){
-        return auditDao.query3(basicEntity);
-    }
 }

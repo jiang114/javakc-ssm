@@ -47,8 +47,8 @@
 	</select>
 
 	<insert id="insert">
-		INSERT INTO TBL_SEAL_ORDER(order_id, order_number, order_name, order_count,order_state)
-			VALUES(#{order_id},#{order_number},#{order_name},#{order_count},#{order_state})
+		INSERT INTO TBL_SEAL_ORDER(order_id, order_number, order_name, order_count,order_state,order_describe)
+			VALUES(#{order_id},#{order_number},#{order_name},#{order_count},#{order_state},#{order_describe})
 	</insert>
 <!--	-->
 	<select id="get" resultMap="orderentityMap">

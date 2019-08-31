@@ -41,7 +41,7 @@ public class UploadFile {
             	String serverPath = realPath +File.separator+datePath+File.separator+ mFile.getOriginalFilename();
                 FileUtils.copyInputStreamToFile(mFile.getInputStream(), new File(serverPath));;
             }
-            map.put("name", mFile.getOriginalFilename());
+            map.put("name", datePath+"/"+mFile.getOriginalFilename());
         }
         map.put("path", realPath +"\\"+datePath);
         return map;

@@ -10,7 +10,7 @@
 		<div class="wrapper wrapper-content animated fadeInRight">
 
 			<div class="ibox float-e-margins">
-				<form action="${path }/basic/create.do" method="post" class="form-horizontal" role="form">
+				<form action="${path }/basic/create.do" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
                     <fieldset>
                         <legend>驾驶员基本信息</legend>
                        <div class="form-group">
@@ -25,7 +25,7 @@
                        </div>           <div class="form-group">
                           <label class="col-sm-2 control-label" >性别</label>
                           <div class="col-sm-4">
-                              <zhg:select codeTp="sex" cls="form-control" name="driver_sex" ></zhg:select>
+                              <zhg:select codeTp="sex" cls="form-control" name="driver_sex" />
                           </div>
                           <label class="col-sm-2 control-label" >在职状态</label>
                           <div class="col-sm-4">
@@ -50,7 +50,7 @@
                           </div>
 							<label class="col-sm-2 control-label" >技术等级</label>
 							<div class="col-sm-4">
-                                <zhg:select codeTp="technical_level" cls="form-control" name="driver_industrial" ></zhg:select>
+                                <zhg:select codeTp="technical_level" cls="form-control" name="driver_industrial" />
 							</div>
                        </div>
 	                <div class="form-group">
@@ -66,7 +66,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label" >上传照片</label>
                             <div class="col-sm-4">
-                                <input class="form-control" type="text" name="driver_picture">
+                                <input class="file" type="file" name="testPhoto" value="" >
                             </div>
                         </div>
 

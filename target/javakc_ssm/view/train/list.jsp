@@ -55,10 +55,10 @@
 							<td>${e.basicEntity.driver_name }</td>
 							<td>暂无</td>
 							<td>${e.train_org_name}</td>
-							<td>${e.train_start_time}</td>
+							<td><fmt:formatDate value="${e.train_start_time}" pattern="yyyy-MM-dd"/></td>
 							<td>${e.train_type}</td>
 							<td>${e.train_content_name}</td>
-							<td>${e.train_result}</td>
+							<td><zhg:show value="${e.train_result}" codeTp="train_result"></zhg:show></td>
 						</tr>
 					</c:forEach>
 					</tbody>

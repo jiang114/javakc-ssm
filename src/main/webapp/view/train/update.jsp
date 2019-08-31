@@ -16,7 +16,6 @@
                     <fieldset>
                         <legend>驾驶员基本信息</legend>
                         <input type="hidden2" value="${trainEntity.train_id}"  name="train_id">
-                        <input type="hidden2" value="${trainEntity.driver_id}" name="driver_id">
                         <div class="form-group">
                             <label class="col-sm-2 control-label" >培训名称</label>
                             <div class="col-sm-4">
@@ -24,10 +23,11 @@
                             </div>
                             <label class="col-sm-2 control-label" >驾驶员姓名</label>
                             <div class="col-sm-4">
-                                <select name="basicEntity.driver_name">
+                                <select name="driver_id" class="form-control">
                                     <c:set var="vs"></c:set>
                                     <c:forEach var="e" items="${list}" varStatus="v">
-                                        <option ${trainEntity.basicEntity.driver_name==e.basicEntity.driver_name?"selected='selected'":""} >${e.basicEntity.driver_name }</option>
+                                        <option ${trainEntity.basicEntity.driver_name==e.basicEntity.driver_name?"selected='selected'":""}
+                                        value="${e.basicEntity.driver_id}">${e.basicEntity.driver_name }</option>
                                     </c:forEach>
                                 </select>
                             </div>
@@ -55,11 +55,11 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label" >开始培训时间</label>
                             <div class="col-sm-4">
-                                <input class="form-control" type="text" name="train_start_time" value="${trainEntity.train_start_time}">
+                                <input class="form-control" type="date" name="train_start_time" value="<fmt:formatDate value="${trainEntity.train_start_time}" pattern="yyyy-MM-dd"/>">
                             </div>
                             <label class="col-sm-2 control-label" >结束培训时间</label>
                             <div class="col-sm-4">
-                                <input class="form-control" type="text" name="train_end_time" value="${trainEntity.train_end_time}">
+                                <input class="form-control" type="date" name="train_end_time" value="<fmt:formatDate value="${trainEntity.train_end_time}" pattern="yyyy-MM-dd"/>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -101,5 +101,4 @@
 		</div>
 	</body>
 	<script type="text/javascript" src="${path }/static/js/plugins/file-input/fileinput.min.js"></script>
-	<script type="text/javascript" src="./js/apply.js"></script>
 </html>

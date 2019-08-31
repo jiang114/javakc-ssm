@@ -26,7 +26,7 @@
                         <div class="form-group">
                         <label class="col-sm-2 control-label" >性别:</label>
                         <div class="col-sm-4">
-                            <label class="control-label" >${basicEntity.driver_sex==1?'男':basicEntity.driver_sex==2?'女':'保密'}</label>
+                            <label class="control-label" ><zhg:show value="${basicEntity.driver_sex}" codeTp="sex"/></label>
                         </div>
                         <label class="col-sm-2 control-label" >在职状态:</label>
                         <div class="col-sm-4">
@@ -51,7 +51,7 @@
                             </div>
                             <label class="col-sm-2 control-label" >技术等级:</label>
                             <div class="col-sm-4">
-                                <label class="control-label" >${basicEntity.driver_industrial==1?'A本':basicEntity.driver_industrial==2?'B本':'C本'}</label>
+                                <label class="control-label" ><zhg:show value="${basicEntity.driver_industrial}" codeTp="technical_level"/></label>
                             </div>
                         </div>
                         <div class="form-group">
@@ -67,7 +67,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label" >照片:</label>
                             <div class="col-sm-4">
-                                <label class="control-label" >${basicEntity.driver_picture}</label>0
+                                <img  src="${path}/upload/${basicEntity.driver_picture}" style="height:100%; weight:100%;">
                             </div>
                         </div>
 

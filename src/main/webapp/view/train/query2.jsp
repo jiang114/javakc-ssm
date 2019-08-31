@@ -70,7 +70,7 @@
                             </div>
                             <label class="col-sm-2 control-label" >培训结果</label>
                             <div class="col-sm-4">
-                                <label class="control-label" >${trainEntity.train_result==1?'完成':'未完成'}</label>
+                                <label class="control-label" ><zhg:show value="${trainEntity.train_result}" codeTp="train_result"/></label>
                             </div>
                         </div>
 
@@ -86,5 +86,4 @@
 		</div>
 	</body>
 	<script type="text/javascript" src="${path }/static/js/plugins/file-input/fileinput.min.js"></script>
-	<script type="text/javascript" src="./js/apply.js"></script>
 </html>

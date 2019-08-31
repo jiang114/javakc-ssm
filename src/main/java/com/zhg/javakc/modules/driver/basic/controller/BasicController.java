@@ -2,6 +2,7 @@ package com.zhg.javakc.modules.driver.basic.controller;
 
 import com.zhg.javakc.base.page.Page;
 import com.zhg.javakc.base.util.CommonUtil;
+import com.zhg.javakc.base.util.file.UploadFile;
 import com.zhg.javakc.modules.driver.basic.entity.BasicEntity;
 import com.zhg.javakc.modules.driver.basic.service.BasicService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.Map;
 
 
 @Controller
@@ -30,8 +33,15 @@ public class BasicController {
     }
 
     @RequestMapping("create")
-    public String create(BasicEntity basicEntity){
+    public String create(BasicEntity basicEntity,HttpServletRequest request){
         basicEntity.setDriver_id(CommonUtil.uuid());
+        try {
+           Map<String,Object> map= UploadFile.upload(request);
+//            String path = map.get("path").toString().replace("/", "\\");
+            basicEntity.setDriver_picture(map.get("name").toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         basicService.save(basicEntity);
         return "redirect:query.do";
     }

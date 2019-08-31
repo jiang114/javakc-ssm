@@ -55,7 +55,7 @@
 							<td>暂无</td>
 							<td>暂无</td>
 							<td>${e.driver_license}</td>
-							<td>${e.driver_industrial}</td>
+							<td><zhg:show value="${e.driver_industrial}" codeTp="technical_level"/></td>
 							<td>${e.driver_type}</td>
 						</tr>
 					</c:forEach>

@@ -12,6 +12,5 @@ public interface TrainDao extends BaseDao<TrainEntity> {
 
     public List<TrainEntity> query1(TrainEntity trainEntity);
     public List<TrainEntity> query2();
-    public TrainEntity query3(BasicEntity basicEntity);
 
 }

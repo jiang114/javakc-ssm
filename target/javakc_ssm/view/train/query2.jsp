@@ -86,5 +86,4 @@
 		</div>
 	</body>
 	<script type="text/javascript" src="${path }/static/js/plugins/file-input/fileinput.min.js"></script>
-	<script type="text/javascript" src="./js/apply.js"></script>
 </html>

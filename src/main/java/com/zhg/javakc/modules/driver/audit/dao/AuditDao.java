@@ -12,5 +12,4 @@ public interface AuditDao extends BaseDao<AuditEntity> {
 
     public List<AuditEntity> query1(AuditEntity auditEntity);
     public List<AuditEntity> query2();
-    public AuditEntity query3(BasicEntity basicEntity);
 }

@@ -4,7 +4,6 @@ import com.zhg.javakc.base.page.Page;
 import com.zhg.javakc.base.util.CommonUtil;
 import com.zhg.javakc.modules.driver.audit.entity.AuditEntity;
 import com.zhg.javakc.modules.driver.audit.service.AuditService;
-import com.zhg.javakc.modules.driver.train.entity.TrainEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -26,7 +25,6 @@ public class AuditController {
     public ModelAndView queryAll(AuditEntity auditEntity, HttpServletRequest request, HttpServletResponse response) {
         ModelAndView modelAndView =new ModelAndView("audit/list");
         Page<AuditEntity> page = auditService.queryAll(auditEntity, new Page<>(request, response));
-//        Page<TrainEntity> page = trainService.query1();
         modelAndView.addObject("page",page);
         return modelAndView;
     }
@@ -38,11 +36,7 @@ public class AuditController {
     }
     @RequestMapping("create")
     public String create(AuditEntity auditEntity){
-        AuditEntity ids=auditService.query3(auditEntity.getBasicEntity());
         auditEntity.setInspection_id(CommonUtil.uuid());
-        if (ids!=null){
-            auditEntity.setDriver_id(ids.getBasicEntity().getDriver_id());
-        }
         auditService.save(auditEntity);
         return "redirect:query1.do";
     }
@@ -56,14 +50,6 @@ public class AuditController {
     }
     @RequestMapping("update")
     public String update(AuditEntity auditEntity){
-        AuditEntity ids=auditService.query3(auditEntity.getBasicEntity());
-        if (ids!=null){
-            if (!ids.getBasicEntity().getDriver_id().equals(auditEntity.getDriver_id())){
-                String id=auditEntity.getBasicEntity().getDriver_id();
-                id=ids.getBasicEntity().getDriver_id();
-                auditEntity.setDriver_id(id);
-            }
-        }
         auditService.update(auditEntity);
         return "redirect:query1.do";
     }

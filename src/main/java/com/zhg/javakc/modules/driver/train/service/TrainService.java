@@ -28,7 +28,4 @@ public class TrainService extends BaseService<TrainDao, TrainEntity> {
         return trainDao.query2();
     }
 
-    public TrainEntity query3(BasicEntity basicEntity){
-        return trainDao.query3(basicEntity);
-    }
 }

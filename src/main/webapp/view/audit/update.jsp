@@ -16,20 +16,20 @@
                     <fieldset>
                         <legend>驾驶员基本信息</legend>
                         <input type="hidden2" name="inspection_id" value="${auditEntity.inspection_id}">
-                        <input type="hidden2" name="driver_id" value="${auditEntity.driver_id}">
                         <div class="form-group">
                             <label class="col-sm-2 control-label" >驾驶员姓名</label>
                             <div class="col-sm-4">
-                                <select name="basicEntity.driver_name">
+                                <select name="driver_id" class="form-control">
                                     <c:set var="vs"></c:set>
                                     <c:forEach var="e" items="${list}" varStatus="v">
-                                        <option ${auditEntity.basicEntity.driver_name==e.basicEntity.driver_name?"selected='selected'":""} >${e.basicEntity.driver_name }</option>
+                                        <option ${auditEntity.basicEntity.driver_name==e.basicEntity.driver_name?"selected='selected'":""}
+                                        value="${e.basicEntity.driver_id}">${e.basicEntity.driver_name }</option>
                                     </c:forEach>
                                 </select>
                             </div>
                             <label class="col-sm-2 control-label" >稽查时间</label>
                             <div class="col-sm-4">
-                                <input class="form-control" type="text" name="inspection_time" value="${auditEntity.inspection_time}">
+                                <input class="form-control" type="text" name="inspection_time" value="<fmt:formatDate value="${auditEntity.inspection_time}" pattern="yyyy-MM-dd" />">
                             </div>
                         </div>           <div class="form-group">
                         <label class="col-sm-2 control-label" >处罚金额</label>
@@ -68,7 +68,7 @@
                             </div>
                             <label class="col-sm-2 control-label" >稽查结果</label>
                             <div class="col-sm-4">
-                                <zhg:select codeTp="train_result" cls="form-control" name="inspection_result" value="${auditEntity.inspection_result}"/>
+                                <input class="form-control" type="text" name="inspection_result" value="${auditEntity.inspection_result}"/>
                             </div>
                         </div>
 
@@ -90,5 +90,4 @@
 		</div>
 	</body>
 	<script type="text/javascript" src="${path }/static/js/plugins/file-input/fileinput.min.js"></script>
-	<script type="text/javascript" src="./js/apply.js"></script>
 </html>

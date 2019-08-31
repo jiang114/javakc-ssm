@@ -56,7 +56,7 @@
 							<td>${e.basicEntity.driver_name }</td>
 							<td>${e.inspection_adress}</td>
 							<td>${e.inspection_org_name}</td>
-							<td>${e.inspection_time}</td>
+							<td><fmt:formatDate value="${e.inspection_time}" pattern="yyyy-MM-dd" /></td>
 							<td>${e.inspection_money}</td>
 							<td>${e.inspection_rectify}</td>
 							<td>${e.inspection_result}</td>

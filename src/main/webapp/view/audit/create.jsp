@@ -16,16 +16,16 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label" >驾驶员姓名</label>
                         <div class="col-sm-4">
-                            <select name="basicEntity.driver_name" class="form-control">
+                            <select name="driver_id" class="form-control">
                                 <c:set var="vs"></c:set>
                                 <c:forEach var="e" items="${list}" varStatus="v">
-                                    <option >${e.basicEntity.driver_name }</option>
+                                    <option value="${e.basicEntity.driver_id}">${e.basicEntity.driver_name }</option>
                                 </c:forEach>
                             </select>
                         </div>
                         <label class="col-sm-2 control-label" >稽查时间</label>
                         <div class="col-sm-4">
-                            <input class="form-control" type="text" name="inspection_time">
+                            <input class="form-control" type="date" name="inspection_time">
                         </div>
                     </div>           <div class="form-group">
                     <label class="col-sm-2 control-label" >处罚金额</label>
